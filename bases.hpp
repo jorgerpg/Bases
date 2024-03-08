@@ -1,5 +1,5 @@
 /**
- * @file bases.cpp
+ * @file bases.hpp
  * @author Jorge Ricarte Passos Gonçalves (jorgericartepg@gmail.com)
  * @brief Implementation file for software timers management.
  * @version 0.1

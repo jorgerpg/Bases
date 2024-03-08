@@ -15,7 +15,7 @@ The code is written in C++ and utilizes the [HAL (Hardware Abstraction Layer)](h
 ## Setup
 To incorporate the `Base` class into your project, follow these steps:
 
-1. Copy the `Base` class implementation (from `Base.h` and `Base.cpp`) into your project.
+1. Copy the `Base` class implementation (from `Base.hpp`) into your project.
 2. Include the necessary headers, such as `main.h` and any required system headers.
 3. Ensure that the `HAL_GetTick()` function or an equivalent is available in your environment.
 
@@ -23,8 +23,7 @@ To incorporate the `Base` class into your project, follow these steps:
 To use the `Base` class for software timer management, follow the example below:
 
 ```cpp
-#include "main.h"
-#include "Base.h"
+#include "Base.hpp"
 
 int main() {
     Base timer;
@@ -32,18 +31,12 @@ int main() {
     // Setting the interval to 1000 milliseconds (1 second)
     timer.start(1000);
 
-    // Starting the timer
-    timer.start();
-
     // Waiting until the interval is reached
-    while (!timer.get()) {
-        // Perform other tasks while waiting
+    if (timer.get()) {
+        // Perform tasks
+        // Restart the timer for the next cycle
+        timer.restart();
     }
-
-    // The interval is reached, perform the desired action
-
-    // Restart the timer for the next cycle
-    timer.restart();
 
     return 0;
 }

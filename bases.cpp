@@ -8,39 +8,6 @@
  * @copyright Copyright (c) 2024
  *
  * This file provides functions to manage software timers.
- *
- * @section functionalities Functionalities:
- * - Start a timer with a specified interval.
- * - Check if a timer has reached its interval.
- * - Restart a timer for the next cycle.
- *
- * @section how_to_use How to use this driver:
- *
- * @code
- * #include "bases.h"
- *
- * int main() {
- *     BaseTimer timer;
- *
- *     // Setting the interval to 1000 milliseconds (1 second)
- *     timer.start(1000);
- *
- *     // Starting the timer
- *     timer.start();
- *
- *     // Waiting until the interval is reached
- *     while (!timer.get()) {
- *         // Perform other tasks while waiting
- *     }
- *
- *     // The interval is reached, perform the desired action
- *
- *     // Restart the timer for the next cycle
- *     timer.restart();
- *
- *     return 0;
- * }
- * @endcode
  */
 
 #ifndef BASE_H

@@ -34,6 +34,7 @@ int main() {
     // Waiting until the interval is reached
     if (timer.get()) {
         // Perform tasks
+        led.toggle(0);
         // Restart the timer for the next cycle
         timer.restart();
     }

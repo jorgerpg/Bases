@@ -23,10 +23,6 @@ public:
         intervalMs_ = interval;
     }
 
-    void start() {
-        startTime_ = HAL_GetTick(); // Using HAL_GetTick() to get the initial time
-    }
-
     bool get() const {
         auto currentTime = HAL_GetTick(); // Get the current time
 
@@ -42,7 +38,7 @@ public:
     }
 
     void restart() {
-        start();
+        startTime_ = HAL_GetTick(); // Using HAL_GetTick() to get the initial time
     }
 
 private:

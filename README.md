@@ -10,7 +10,7 @@
 This repository contains a C++ code implementation for a software timer management class named `Base`. The `Base` class provides functionalities to start, check, and restart timers, making it useful for time-related tasks in embedded systems or other applications.
 
 ## Technologies
-The code is written in C++ and utilizes the [HAL (Hardware Abstraction Layer)](https://en.wikipedia.org/wiki/Hardware_abstraction) library for obtaining the system tick. It is assumed that the `HAL_GetTick()` function is available in the environment.
+The code is written in C++ and utilizes the [HAL (Hardware Abstraction Layer)](https://en.wikipedia.org/wiki/Hardware_abstraction) library for obtaining the system tick. It is assumed that the `HAL_GetTick()` function is available in the environment, just change it and the respective lib for your micro.
 
 ## Setup
 To incorporate the `Base` class into your project, follow these steps:

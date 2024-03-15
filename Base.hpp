@@ -24,7 +24,7 @@ public:
     }
 
     bool get() const {
-        auto currentTime = HAL_GetTick(); // Get the current time
+        auto currentTime = getTick(); // Get the current time
 
         // Handle overflow
         if (currentTime < startTime_) {
@@ -38,9 +38,14 @@ public:
     }
 
     void restart() {
-        startTime_ = HAL_GetTick(); // Using HAL_GetTick() to get the initial time
+        startTime_ = getTick(); // Using getTick() to get the initial time
     }
 
+protected:
+    uint32_t getTick() const override {
+            return HAL_GetTick();
+        }
+        
 private:
     uint32_t intervalMs_; // Interval in milliseconds
     uint32_t startTime_;   // Timer start time
